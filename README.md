@@ -4,20 +4,21 @@ MCP server for interacting with Redmine's REST API. Provides tools for managing 
 
 ## Quick Start
 
-1. Install the package:
+1. In VSCode:
+   Make sure you have Node.js version 16 or higher installed, then run:
    ```bash
-   npm install redmine-mcp-server
+   npx -y @almexinc/redmine-mcp-server
    ```
 
-2. Configure in VSCode:
+2. Configure VSCode:
    Edit `~/.config/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`:
 
    ```json
    {
      "mcpServers": {
        "redmine-server": {
-         "command": "redmine-mcp-server",
-         "args": [],
+         "command": "npx",
+         "args": ["-y", "@almexinc/redmine-mcp-server"],
          "env": {
            "REDMINE_API_KEY": "your-api-key",
            "REDMINE_URL": "https://redmine.almex-contents.jp/"

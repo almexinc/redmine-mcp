@@ -1,5 +1,5 @@
 {
-  "name": "redmine-mcp-server",
+  "name": "@almexinc/redmine-mcp-server",
   "version": "1.0.0",
   "description": "MCP Server for Redmine API integration",
   "type": "module",
