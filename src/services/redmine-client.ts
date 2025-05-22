@@ -56,15 +56,16 @@ export class RedmineApiClient {
   }
 
   async uploadFile(fileName: string, content: Buffer): Promise<{ token: string }> {
+    const FormData = (await import('form-data')).default;
     const formData = new FormData();
-    formData.append('file', new Blob([content]), fileName);
+    formData.append('file', content, fileName);
 
     const response = await this.client.post<{ upload: { token: string } }>(
       'uploads.json',
       formData,
       {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          ...formData.getHeaders(),
         },
       }
     );
